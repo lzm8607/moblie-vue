@@ -3,3 +3,5 @@ node_modules
 */.DS_Store
 build/
 dist/
+test/
+*/npm-debug.log

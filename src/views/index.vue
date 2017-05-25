@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 100%;height: 100%">
+    <div>
         <slider
                 :pagination-visible="true"
                 :slides="slides"
@@ -13,7 +13,7 @@
 
             <div v-for="(slide,index) in slides" :key="index">
                 <a :href="slide.value">
-                    <img width="350" height="150" :src="slide.image" />
+                    <img style="width: 100%;height: 100%;min-height: 200px" :src="slide.image" />
                 </a>
             </div>
         </slider>

@@ -1,22 +1,24 @@
 <template>
     <div>
-        <mu-appbar title="新车发布" :zDepth="0">
-            <mu-icon-button icon="face" slot="left" @click="open('left')"/>
-            <mu-icon-menu icon="add" slot="right">
-                <mu-menu-item title="Preview" leftIcon="remove_red_eye"/>
-                <mu-menu-item title="Share" leftIcon="person_add"/>
-                <mu-menu-item title="Get Links" leftIcon="link"/>
-                <mu-divider/>
-                <mu-menu-item title="Make a copy" leftIcon="content_copy"/>
-                <mu-menu-item title="Download" leftIcon="file_download"/>
-                <mu-menu-item title="Remove" leftIcon="delete"/>
-            </mu-icon-menu>
-        </mu-appbar>
-        <mu-tabs :value="activeTab" @change="handleTabChange">
-            <mu-tab value="plist" title="找人"/>
-            <mu-tab value="clist" title="找车"/>
-            <mu-tab value="dlist" title="金融"/>
-        </mu-tabs>
+        <div>
+            <mu-appbar title="新车发布" :zDepth="0">
+                <mu-icon-button icon="account_circle" slot="left" @click="open('left')"/>
+                <mu-icon-menu icon="add" slot="right">
+                    <mu-menu-item title="Preview" leftIcon="remove_red_eye"/>
+                    <mu-menu-item title="Share" leftIcon="person_add"/>
+                    <mu-menu-item title="Get Links" leftIcon="link"/>
+                    <mu-divider/>
+                    <mu-menu-item title="Make a copy" leftIcon="content_copy"/>
+                    <mu-menu-item title="Download" leftIcon="file_download"/>
+                    <mu-menu-item title="Remove" leftIcon="delete"/>
+                </mu-icon-menu>
+            </mu-appbar>
+            <mu-tabs :value="activeTab" @change="handleTabChange">
+                <mu-tab value="plist" title="找人"/>
+                <mu-tab value="clist" title="找车"/>
+                <mu-tab value="dlist" title="金融"/>
+            </mu-tabs>
+        </div>
         <router-view></router-view>
         <mu-paper style="position: fixed;bottom: 0;width: 100%">
             <mu-bottom-nav :value="bottomNav" shift @change="handleChange">

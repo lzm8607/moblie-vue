@@ -3,9 +3,9 @@
  */
 const Index = r => require.ensure([], () => r(require('../views/index.vue')), 'index');
 const Home = r => require.ensure([], () => r(require('../views/home.vue')), 'home');
-const DataList = r => require.ensure([], () => r(require('../views/home/datalist.vue')), 'home');
-const PeopleList = r => require.ensure([], () => r(require('../views/home/personlist.vue')), 'home');
-const CarList = r => require.ensure([], () => r(require('../views/home/carlist.vue')), 'home');
+const DataList = r => require.ensure([], () => r(require('../views/home/data.vue')), 'home');
+const PeopleList = r => require.ensure([], () => r(require('../views/home/contect.vue')), 'home');
+const CarList = r => require.ensure([], () => r(require('../views/home/car.vue')), 'home');
 const routes = [
     {path: '/',redirect:{name:'index'}},
     {path: '/index', component: Index, name: 'index'},

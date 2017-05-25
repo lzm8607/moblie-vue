@@ -106,7 +106,7 @@
             },
             setPage:function(page) {
                 if (typeof page!="number") //event
-                    page=page.target?page.target.id:1;
+                    page=page.target?page.target.id:1||1;
 
                 this.autoStop();
                 var propName= 'clientWidth',
@@ -136,6 +136,10 @@
             },
             _onTouchMove:function(e) {
                 this.delta = this._getTouchPos(e) - this.startPos;
+//                console.log(this.delta)
+                if((this.slideEls.length == this.currentPage&&this.delta<0)||(this.currentPage==1&&this.delta>0)) {
+                        return false;
+                    }
                 if (!this.performanceMode) {//bad android
                     this.translateX = this.startTranslateX + this.delta;
                     this.$emit('slider-move', this.translateX);
