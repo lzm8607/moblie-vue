@@ -50,7 +50,7 @@ module.exports = {
             }]
         }, {
             test: /\.less$/,
-            loader: ExtractTextPlugin.extract({fallback: 'style', use: 'css!less'})
+            loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!less'})
         }, {
             test: /\.js$/,
             loader: "babel-loader",
@@ -59,6 +59,9 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
+        },{
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!sass-loader'})
         }, {
             test: /\.vue$/,
             use: ['vue-loader']

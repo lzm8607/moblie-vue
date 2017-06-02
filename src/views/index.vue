@@ -21,6 +21,7 @@
 </template>
 <script>
 //    import { swiper, swiperSlide } from 'vue-awesome-swiper';
+    import "../sass/style.scss";
     import slider from '../components/swiper.vue';
 
     export default {

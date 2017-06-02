@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "unit": "karma start",
+    "clean":"rm -rf dist",
     "predev": "echo '******开始构建开发环境的代码*********'",
     "dev": "env NODE_ENV=dev webpack-dev-server --host 0.0.0.0 --hot --inline --progress --colors",
     "postdev": "echo '******构建成功*****'",
@@ -53,7 +54,9 @@
     "karma-webpack": "^2.0.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
+    "node-sass": "^4.5.3",
     "open-browser-webpack-plugin": "0.0.5",
+    "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
     "vue-loader": "^11.1.4",
