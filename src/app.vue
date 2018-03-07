@@ -11,7 +11,9 @@
             }
         },
         methods: {
-
+            test:(a,b)=>{
+               return a+b;
+            }
         }
     }
 </script>

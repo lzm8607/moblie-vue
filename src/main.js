@@ -18,11 +18,11 @@ const router = new Router({
     routes: routes
 });
 router.beforeEach((to,form,next)=>{
-    console.log('Before');
+    // console.log('Before');
     next();
 });
 router.afterEach((to, from, next) => {
-    console.log('After');
+    // console.log('After');
 });
 new Vue({
     el:'#app',

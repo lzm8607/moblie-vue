@@ -9,6 +9,17 @@ module.exports = {
         chunkFilename: 'js/[name].[chunkhash:8].js',
         publicPath: "/"
     },
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: "eslint-loader",
+                query: {presets: ['es2015', 'vue'],formatter: require('eslint-friendly-formatter')},
+                exclude: /node_modules/
+            },
+        ]
+    },
+
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {
