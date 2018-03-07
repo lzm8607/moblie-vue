@@ -4,10 +4,12 @@
   "description": "vue webapp with muse-ui",
   "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "unit": "cross-env NODE_ENV=unit BABEL_ENV=unit karma start",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --host 0.0.0.0 --hot --inline --progress --colors",
-    "deploy": "cross-env NODE_ENV=production webpack --progress --colors --bail --profile"
+    "test": "cross-env NODE_ENV=production webpack --progress --colors --bail --profile",
+    "deploy": "cross-env NODE_ENV=production webpack --progress --colors --bail --profile",
+    "publish-test": "gulp --env test",
+    "publish-prd": "gulp --env prd"
   },
   "repository": {
     "type": "git",

@@ -12,3 +12,8 @@ mobile vue with muse-ui demo
 * 正式
     * ```npm run deploy```
 
+## 发布
+* 测试
+    * ```publish-test```
+* 正式
+    * ```publish-prd```
