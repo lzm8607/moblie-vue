@@ -1,14 +1,12 @@
 /**
  * Created by Jimmy on 2017/5/22.
  */
-const Index = r => require.ensure([], () => r(require('../views/index.vue')), 'index');
 const Home = r => require.ensure([], () => r(require('../views/home.vue')), 'home');
 const DataList = r => require.ensure([], () => r(require('../views/home/data.vue')), 'home');
 const PeopleList = r => require.ensure([], () => r(require('../views/home/contect.vue')), 'home');
 const CarList = r => require.ensure([], () => r(require('../views/home/car.vue')), 'home');
 const routes = [
-    {path: '/',redirect:{name:'index'}},
-    {path: '/index', component: Index, name: 'index'},
+    {path: '/',redirect:{name:'home'}},
     {path: '/home', component: Home, name: 'home',redirect:{name:'dlist'},children:[
         {path: '/home/dlist', component: DataList, name: 'dlist'},
         {path: '/home/plist', component: PeopleList, name: 'plist'},

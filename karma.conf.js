@@ -28,14 +28,15 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'test/unit/**/*.spec.js': ['webpack']
+            'test/unit/**/*.spec.js': ['webpack','sourcemap'],
+            'src/**/*(!.spec).js': ['webpack','sourcemap','coverage'],
         },
 
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
 
 
         // web server port
@@ -68,6 +69,7 @@ module.exports = function (config) {
         // how many browser should be started simultaneous
         concurrency: Infinity,
         webpack: {
+            devtool: '#inline-source-map',
             module: {
                 loaders: [{
                     test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
@@ -79,7 +81,7 @@ module.exports = function (config) {
                     }]
                 }, {
                     test: /\.less$/,
-                    loader: ExtractTextPlugin.extract({fallback: 'style', use: 'css!less'})
+                    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!less'})
                 }, {
                     test: /\.js$/,
                     loader: "babel-loader",
@@ -88,12 +90,19 @@ module.exports = function (config) {
                 }, {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
+                },{
+                    test: /\.scss$/,
+                    loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!sass-loader'})
                 }, {
                     test: /\.vue$/,
                     use: ['vue-loader']
                 }
                 ]
             }
+        },
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
         }
     })
 }
